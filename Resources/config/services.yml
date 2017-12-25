@@ -1,0 +1,27 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    Makm\GuestBundle\Security\Listener:
+      arguments:
+          - '@security.token_storage'
+          - ~
+          - ~
+          - '@security.authentication.manager'
+          - ~
+      abstract: true
+      public: false
+
+    Makm\GuestBundle\Security\AuthenticationProvider:
+      arguments:
+          -
+          -
+      abstract: true
+      public: false
+
+
+    Makm\GuestBundle\Listener\ResponseListener:
+        class: Makm\GuestBundle\Listener\ResponseListener
+        tags:
+            - { name:kernel.event_subscriber }
