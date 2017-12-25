@@ -1,0 +1,1 @@
+Symfony's bundle for use any user's object as guest, 'anon.' instead
